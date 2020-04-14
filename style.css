@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  position: relative;
+  width: 50%;
+  height: 50px;
+  overflow: hidden;
+}
+
+
+.form input {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  border: none;
+  color: rgb(1, 1, 66);
+  outline: none;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid gray;
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid rgb(114, 163, 219);
+  left: 0px;
+  bottom: -1px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  transform: translateY(-120%) scale(0.8);
+  color: rgb(114, 163, 219);
+}
+
+.form input:focus + .label-name::after ,
+.form input:valid + .label-name::after {
+    transform: translateX(0%);
+}
